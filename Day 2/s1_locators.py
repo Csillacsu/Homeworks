@@ -13,11 +13,11 @@ browser = webdriver.Chrome(service=service, options=options)
 
 browser.get(URL)
 
-# find by name
+### find by name
 # guestnr = browser.find_element(By.NAME, 'numberOfGuests')
 # guestnr.send_keys('2')
 
-# find by tag name
+### find by tag name
 # guestnr2 = browser.find_element(By.TAG_NAME, 'input')
 # guestnr2.clear()
 # guestnr2.send_keys('3')
@@ -26,17 +26,18 @@ browser.get(URL)
 # input_fields[0].clear()
 # input_fields[0].send_keys('6')
 
-# find by link
+### find by link
 # main_logo = browser.find_element(By.LINK_TEXT, 'Bejelentkezés')
 # main_logo = browser.find_element(By.PARTIAL_LINK_TEXT, 'Bejel')
 # main_logo.click()
 
-# find by class
+### find by class
 # login_btn = browser.find_element(By.CLASS_NAME, 'nav-link')
 # login_btn = browser.find_elements(By.CLASS_NAME, 'nav-link')[1]
 # login_btn.click()
 
-# find by css selector
+### find by css selector
+### Console: $$('a[class="nav-link"]')
 login_btn = browser.find_element(By.CSS_SELECTOR, 'a[class="nav-link"]')
 login_btn.click()
 
@@ -57,3 +58,6 @@ if logout_btn == "Kilépés":
     print("Boldogság van!")
 else:
     print("Gikszer van")
+
+### find by xpath
+### Console:
