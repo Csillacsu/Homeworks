@@ -52,12 +52,29 @@ submit_btn = browser.find_element(By.CSS_SELECTOR, 'button[name="submit"]')
 submit_btn.click()
 
 time.sleep(1)
-logout_btn = browser.find_element(By.LINK_TEXT, 'Kilépés').text
+logout_btn = browser.find_element(By.LINK_TEXT, 'Kilépés')
 
-if logout_btn == "Kilépés":
+if logout_btn.text == "Kilépés":
     print("Boldogság van!")
 else:
     print("Gikszer van")
 
 ### find by xpath
-### Console:
+### Console: $x('//button[@class="btn btn-outline-primary btn-block"]')
+
+hotel_list_btn = browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
+hotel_list_btn.click()
+
+time.sleep(1)
+hotel_name_list = browser.find_elements(By.XPATH, '//h4[@style="cursor: pointer"]')
+hotel_name = hotel_name_list[8]
+print(hotel_name.text)
+
+# Console: $x('//h4[text()="Kacsafészek - nyaraló"]')
+kacsa_hotel = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]')
+print(kacsa_hotel.get_attribute('style'))
+
+kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]/../../..')
+# kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]/p/span')
+print(kacsa_div.text)
+
