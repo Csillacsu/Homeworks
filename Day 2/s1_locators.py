@@ -78,3 +78,13 @@ kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló
 # kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]/p/span')
 print(kacsa_div.text)
 
+### Mini-mal apartman exercise
+
+
+### relatív lokátorok
+from selenium.webdriver.support.relative_locator import locate_with
+
+time.sleep(2)
+city_inn = browser.find_element(locate_with(By.TAG_NAME, 'button').below({By.XPATH: '//h4[text()="Benczúr Hotel Budapest - panzió"]'}))
+city_inn.click()
+
