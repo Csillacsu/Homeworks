@@ -10,3 +10,16 @@ options.add_experimental_option("detach", True)
 browser = webdriver.Chrome(service=service, options=options)
 
 browser.get(URL)
+
+# guestnr = browser.find_element(By.NAME, 'numberOfGuests')
+# guestnr.send_keys('2')
+
+# guestnr2 = browser.find_element(By.TAG_NAME, 'input')
+# guestnr2.clear()
+# guestnr2.send_keys('3')
+#
+# input_fields = browser.find_elements(By.TAG_NAME, 'input')
+# input_fields[0].clear()
+# input_fields[0].send_keys('6')
+
+
