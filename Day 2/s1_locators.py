@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -31,6 +33,27 @@ browser.get(URL)
 
 # find by class
 # login_btn = browser.find_element(By.CLASS_NAME, 'nav-link')
-login_btn = browser.find_elements(By.CLASS_NAME, 'nav-link')[1]
+# login_btn = browser.find_elements(By.CLASS_NAME, 'nav-link')[1]
+# login_btn.click()
+
+# find by css selector
+login_btn = browser.find_element(By.CSS_SELECTOR, 'a[class="nav-link"]')
 login_btn.click()
 
+email_input = browser.find_element(By.ID, 'email')
+password_input = browser.find_element(By.ID, 'password')
+
+email_input.send_keys('andi.teszt2021@gmail.com')
+password_input.send_keys('tesztelek2021')
+
+# submit_btn = browser.find_element(By.NAME, 'submit')
+submit_btn = browser.find_element(By.CSS_SELECTOR, 'button[name="submit"]')
+submit_btn.click()
+
+time.sleep(1)
+logout_btn = browser.find_element(By.LINK_TEXT, 'Kilépés').text
+
+if logout_btn == "Kilépés":
+    print("Boldogság van!")
+else:
+    print("Gikszer van")
