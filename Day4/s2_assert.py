@@ -39,7 +39,8 @@ assert profile_id.text == "Profilom (Andrea)"
 hotel_list_btn = browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
 hotel_list_btn.click()
 
-search_btn = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//button[@class="btn btn-primary mr-4"]')))
+search_btn = WebDriverWait(browser, 5).until(
+    EC.presence_of_element_located((By.XPATH, '//button[@class="btn btn-primary mr-4"]')))
 assert search_btn.is_displayed()
 
 third_checkbox = browser.find_elements(By.XPATH, '//input[@type="checkbox"]')[2]
@@ -56,6 +57,5 @@ hotel_name_list = browser.find_elements(By.XPATH, '//h4[@style="cursor: pointer"
 print(len(hotel_name_list))
 assert len(hotel_name_list) != 0
 assert len(hotel_name_list) == 10
-
 
 # browser.quit()
