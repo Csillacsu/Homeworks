@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
 options = Options()
@@ -26,8 +28,10 @@ password_input.send_keys('tesztelek2021')
 
 login_btn.click()
 
-time.sleep(1)
-profile_id = browser.find_element(By.ID, 'profile')
+# time.sleep(1)
+# profile_id = browser.find_element(By.ID, 'profile')
+
+profile_id = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.ID, 'profile')))
 
 if profile_id.text == "Profilom (Andrea)":
     print("Login successful")
