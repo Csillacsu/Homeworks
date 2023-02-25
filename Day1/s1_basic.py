@@ -4,11 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-s = Service(executable_path='S:\oktatási anyagok\chromedriver.exe')
+s = Service(executable_path='C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
 o = Options()
 o.add_experimental_option('detach', True)
 browser = webdriver.Chrome(service=s, options=o)
 browser.get('https://www.selenium.dev/')
+
 
 # ---- 1 ---- ablak méretezések
 browser.maximize_window()
@@ -19,6 +20,7 @@ browser.fullscreen_window()
 time.sleep(2)
 browser.set_window_size(800, 600, 'current')
 time.sleep(2)
+
 
 # ---- 2 ---- böngésző címének elkérése
 title = browser.title
@@ -39,6 +41,7 @@ browser.save_screenshot(f'screenshot_{title}.png')
 used_url = browser.current_url
 print(f'Aktuális url: {browser.current_url}')
 
+
 # ---- 5 ---- navigáció
 time.sleep(2)
 browser.back()
@@ -51,3 +54,4 @@ time.sleep(2)
 
 # browser.close() # egy ablakot zár
 browser.quit() # minden ablakot bezár
+
