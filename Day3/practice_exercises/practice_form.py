@@ -9,8 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 service = Service(executable_path=r'C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
@@ -18,6 +17,7 @@ options = Options()
 options.add_experimental_option("detach", True)
 
 browser = webdriver.Chrome(service=service, options=options)
+actions = ActionChains(webdriver)
 
 URL = "https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm"
 browser.get(URL)
@@ -77,8 +77,8 @@ button_submit.click()
 
 time.sleep(2)
 
-send_keys(Keys.ENTER)
+actions.send_keys(Keys.ENTER)
 
-time.sleep(2)
+time.sleep(1)
 
 browser.quit()
