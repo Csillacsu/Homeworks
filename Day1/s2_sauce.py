@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-s = Service(executable_path='S:\oktatási anyagok\chromedriver.exe')
+s = Service(executable_path='C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
 o = Options()
 o.add_experimental_option('detach', True)
 browser = webdriver.Chrome(service=s, options=o)

@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 
 import time
 
-PATH = "S:\oktatási anyagok\chromedriver.exe"
+PATH = "C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe"
 s = Service(executable_path=PATH)
 o = Options()
 o.add_experimental_option("detach", True)

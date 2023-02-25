@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-PATH = '/home/user/Asztal/chromedriver_linux64/chromedriver'
+PATH = 'C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe'
 s = Service(executable_path=PATH)
 o = Options()
 o.add_experimental_option("detach", True)
