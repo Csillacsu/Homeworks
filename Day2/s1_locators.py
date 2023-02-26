@@ -74,17 +74,41 @@ print(hotel_name.text)
 kacsa_hotel = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]')
 print(kacsa_hotel.get_attribute('style'))
 
+# 3 divvel feljebb megyünk
 kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]/../../..')
 # kacsa_div = browser.find_element(By.XPATH, '//h4[text()="Kacsafészek - nyaraló"]/p/span')
 print(kacsa_div.text)
 
+
 ### Mini-mal apartman exercise
 
+page_list = browser.find_elements(By.XPATH, '//a[@style="cursor: pointer"]')
+page_3 = page_list[3]
+page_3.click()
 
+time.sleep(2)
+
+minimal_apartman = browser.find_element(By.XPATH, '//h4[text()="Mini-mal Apartman Budapest - panzió"]')
+minimal_apartman.click()
+
+time.sleep(2)
+
+rate = browser.find_element(By.XPATH, '//span[text()="8.2"]')
+print(f'A szálloda értékelése a többi vendég szerint: {rate.text}')
+
+time.sleep(2)
+
+features_list = browser.find_elements(By.XPATH, '//div[@class="col-md-8"]')
+feature = features_list[1]
+print(f'A szállpda felszereltsége: {feature.text}')
+
+
+
+"""
 ### relatív lokátorok
 from selenium.webdriver.support.relative_locator import locate_with
 
 time.sleep(2)
 city_inn = browser.find_element(locate_with(By.TAG_NAME, 'button').below({By.XPATH: '//h4[text()="Benczúr Hotel Budapest - panzió"]'}))
 city_inn.click()
-
+"""
