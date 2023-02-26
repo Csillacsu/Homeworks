@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 URL = 'https://demoqa.com/register'
-service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
+service = Service(executable_path=r'C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
 options = Options()
 options.add_experimental_option("detach", True)
 browser = webdriver.Chrome(service=service, options=options)
