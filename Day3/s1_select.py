@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
+service = Service(executable_path=r'C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
 options = Options()
 options.add_experimental_option("detach", True)
 browser = webdriver.Chrome(service=service, options=options)
@@ -18,10 +18,10 @@ select_fruit = Select(browser.find_element(By.ID, 'fruits'))
 select_fruit.select_by_visible_text('Mango')
 
 select_hero = Select(browser.find_element(By.ID, 'superheros'))
-print(select_hero.is_multiple)
+print(select_hero.is_multiple)   # true vagy false értéket ad, azt mutatja meg hogy multi szelekt lesz-e
 select_hero.select_by_value('ca')
 select_hero.select_by_value('ds')
-select_hero.deselect_by_value('ds')
+select_hero.deselect_by_value('ds')  # deselect
 select_hero.select_by_index('2')
 
 # for hero in select_hero.options:
@@ -32,4 +32,4 @@ for hero in select_hero.all_selected_options:
 
 # select_hero.deselect_all()
 
-print(select_hero.first_selected_option.text)
+print(select_hero.first_selected_option.text) # first_selected_oprion , csak az első kiválasztott elemet adja vissza
