@@ -12,7 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 URL = 'http://hotel-v2.progmasters.hu/'
-service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
+service = Service(executable_path=r'C:/Users/Csillacsu/OneDrive/Dokumentumok/Progmasters Automata tesztelő 2023/chromedriver_win32/chromedriver.exe')
 options = Options()
 options.add_experimental_option("detach", True)
 browser = webdriver.Chrome(service=service, options=options)
@@ -32,6 +32,11 @@ submit_btn.click()
 # time.sleep(1)
 # alert_message = browser.find_element(By.ID, 'flash')
 
+
+# webdriver waitnek meg kell andi a böngészőt ez most a browser és az várakozási időt ami itt 5
+# until (vagy intil not is lehet)azt jelenti hogy mi az a feltétel amire várunk
+# EC itt az importnál meghatározott expected conditions
+# prescence of element located vagyis itt most az hogy alert message megjelenik
 alert_message = WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.ID, 'flash')))
 
 if alert_message.get_attribute('class') == "flash success":
