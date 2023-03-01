@@ -61,3 +61,20 @@ from datetime import datetime, date, time, timezone
 # print(datetime.now(timezone.utc))
 
 #### formázás
+# strftime - string format time
+# datetime to string
+
+current_datetime = datetime.now()
+print(current_datetime)
+print(current_datetime.strftime("%Y/%m/%d, %H:%M:%S"))
+print(current_datetime.strftime("%Y/%m/%d"))
+print(current_datetime.strftime("%m"))
+print(type(current_datetime.strftime("%m")))
+
+# string to datetime
+# strptime
+
+date_str = "2020/05/17"
+coverted_date = datetime.strptime(date_str, "%Y/%m/%d")
+print(coverted_date)
+print(type(coverted_date))
