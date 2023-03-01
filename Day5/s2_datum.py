@@ -72,7 +72,7 @@ print(current_datetime.strftime("%m"))
 print(type(current_datetime.strftime("%m")))
 
 # string to datetime
-# strptime
+# strptime - string parse time
 
 date_str = "2020/05/17"
 coverted_date = datetime.strptime(date_str, "%Y/%m/%d")
