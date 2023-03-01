@@ -1,11 +1,16 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.firefox import GeckoDriverManager
+# from webdriver_manager.opera import OperaDriverManager
+# from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
+# service = Service(executable_path=r'/home/user/Asztal/chromedriver_linux64/chromedriver')
+service = Service(executable_path=ChromeDriverManager().install())
 options = Options()
 options.add_experimental_option("detach", True)
 
