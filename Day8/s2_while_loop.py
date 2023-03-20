@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -12,6 +13,6 @@ options.add_experimental_option("detach", True)
 options.add_argument('window-position=-1000,0')
 browser = webdriver.Chrome(service=service, options=options)
 
-URL = "http://selenium.oktwebs.training360.com/kitchensink.html"
+URL = "http://hotel-v2.progmasters.hu/"
 browser.get(URL)
 browser.maximize_window()
