@@ -12,6 +12,39 @@ options.add_experimental_option("detach", True)
 options.add_argument('window-position=-1000,0')
 browser = webdriver.Chrome(service=service, options=options)
 
-URL = "http://selenium.oktwebs.training360.com/kitchensink.html"
+# URL = "http://selenium.oktwebs.training360.com/kitchensink.html"
+# browser.get(URL)
+# browser.maximize_window()
+#
+# open_tab_btn = browser.find_element(By.ID, 'opentab')
+# open_tab_btn.click()
+#
+# print(browser.window_handles)
+# print(browser.title)
+#
+# main_tab = browser.window_handles[0]
+# new_tab = browser.window_handles[1]
+#
+# browser.switch_to.window(new_tab)
+# print(browser.title)
+
+URL = "https://the-internet.herokuapp.com/windows"
 browser.get(URL)
 browser.maximize_window()
+
+open_tab_link = browser.find_elements(By.TAG_NAME, 'a')[1]
+open_tab_link.click()
+
+main_tab = browser.window_handles[0]
+new_tab = browser.window_handles[1]
+
+print(browser.title)
+browser.switch_to.window(new_tab)
+print(browser.title)
+
+# browser.close()
+#
+# browser.switch_to.window(main_tab)
+# browser.close()
+
+browser.quit()
