@@ -47,4 +47,10 @@ print(browser.title)
 # browser.switch_to.window(main_tab)
 # browser.close()
 
+browser.switch_to.new_window()
+browser.get("https://www.google.com")
+print(browser.title)
+
+# browser.execute_script('window.open("URL")')
+
 browser.quit()
